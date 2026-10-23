@@ -19,13 +19,19 @@ class A {
 		}
 };
 
-int A::z = 0; 
+int A::z = 0; // For Static Data member we need to
+	      // resolve its scope to access in
+	      // class member function.
+//int A::x = 0; // Invalid as its directly accessed 
+	      // by member functions
+	      // (error: ‘int A::x’ is not a static data member of ‘class A’)
 
 int main() {
 	A obj;
 	obj.vSetData(10, 20);
 	obj.vSum(); 
 	obj.vPrintData();
+
 }
 
 
